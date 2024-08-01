@@ -15,6 +15,12 @@ class BudgetCategory:
     def get_budget(self):
         return self.__budget
     
+    def add_category(food_category, budget_list):
+        cat_name = food_category.get_category()
+        if cat_name not in budget_list:
+            budget_list[cat_name] = food_category
+            print(budget_list)
+    
     def add_expense(self, amount):
         category = input("What's the category?: ")
         if category in budget_list:
@@ -26,10 +32,6 @@ class BudgetCategory:
         print(budget_list)
     
 budget_list = {}
-
-def add_category(food_category, budget_list):
-    if food_category not in budget_list:
-        budget_list[food_category] = food_category
 
 food_category = BudgetCategory("Food", 500)
 food_category.add_expense(100)
