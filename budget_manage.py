@@ -1,5 +1,5 @@
-class BudgetCategory():
-    def init(self, name, budget):
+class BudgetCategory:
+    def __init__(self, name, budget):
         self.__name = name
         self.__budget = budget
 
@@ -17,7 +17,7 @@ class BudgetCategory():
     
     def add_expense(self, amount):
         category = input("What's the category?: ")
-        if category == isinstance(BudgetCategory):
+        if category in budget_list:
             new_budget = category.getbudget() + amount
             return new_budget
         
@@ -26,3 +26,7 @@ class BudgetCategory():
             print(category)
 
 budget_list = {}
+
+food_category = BudgetCategory("Food", 500)
+food_category.add_expense(100)
+food_category.display_category_summary()
